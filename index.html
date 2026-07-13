@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Khaled Mohammed — iOS Developer | Swift & SwiftUI</title>
-<meta name="description" content="Khaled Mohammed is an iOS Developer with 4+ years building native apps in Swift & SwiftUI. 5 apps live on the App Store. Open to remote and relocation opportunities." />
+<title>Khaled Mohammed — iOS Developer | GCC ideas into App Store businesses</title>
+<meta name="description" content="Khaled Mohammed is an iOS Developer and long-term technical partner to GCC startups. Builds products with founders from zero; engagements run 1–2 years. 5 apps live on the App Store. Swift, SwiftUI, Firebase, Moyasar, Firebase Analytics, A/B testing." />
 <meta name="author" content="Khaled Mohammed" />
-<meta name="keywords" content="Khaled Mohammed, iOS Developer, Swift, SwiftUI, iOS Engineer, Mobile Developer, App Store, Firebase, Egypt, Cairo" />
+<meta name="keywords" content="Khaled Mohammed, iOS Developer, Swift, SwiftUI, iOS Engineer, Mobile Developer, TDD, XCTest, Instruments, Swift Package Manager, App Store, Firebase, Moyasar, Tap Payments, multi-vendor marketplace, Arabic RTL, Saudi Arabia, Kuwait, GCC, Egypt, Cairo" />
 <link rel="canonical" href="https://khaledm2225.github.io/" />
 <meta name="robots" content="index, follow" />
 
@@ -108,11 +108,14 @@
   .btn-primary:hover{background:var(--accent-2);transform:translateY(-2px)}
   .btn-ghost{border-color:var(--line-strong);color:var(--text)}
   .btn-ghost:hover{border-color:var(--text);background:rgba(255,255,255,.04)}
-  .pill{margin-top:26px;display:inline-flex;align-items:center;gap:9px;
-    font-size:.82rem;color:var(--muted);border:1px solid var(--line);
-    padding:8px 15px;border-radius:100px;background:var(--glass-2)}
-  .pill .live{width:8px;height:8px;border-radius:50%;background:#33d17a;
-    box-shadow:0 0 10px 1px rgba(51,209,122,.7);animation:pulse 2.4s infinite}
+  .pill{margin-top:30px;display:inline-flex;align-items:center;gap:11px;
+    font-family:var(--font-body);font-size:1rem;font-weight:600;letter-spacing:-.01em;
+    color:var(--text);border:1px solid rgba(51,209,122,.42);
+    padding:12px 22px;border-radius:100px;background:rgba(51,209,122,.09);
+    box-shadow:0 0 30px -8px rgba(51,209,122,.45)}
+  .pill b{color:#4ade80;font-weight:700}
+  .pill .live{width:10px;height:10px;border-radius:50%;background:#33d17a;
+    box-shadow:0 0 12px 2px rgba(51,209,122,.85);animation:pulse 2.4s infinite;flex:none}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
   /* portrait (hero right) */
@@ -124,7 +127,7 @@
     -webkit-user-drag:none;user-select:none}
 
   /* stat cards (row under hero) */
-  .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:64px}
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:64px}
   .stat{display:flex;align-items:center;gap:18px;padding:20px 24px;position:relative;overflow:hidden;
     transition:transform .25s ease,border-color .25s ease}
   .stat:hover{transform:translateY(-4px);border-color:var(--line-strong)}
@@ -134,6 +137,7 @@
   .stats-row .stat:nth-child(1){animation:riseIn .7s .28s ease both}
   .stats-row .stat:nth-child(2){animation:riseIn .7s .4s ease both}
   .stats-row .stat:nth-child(3){animation:riseIn .7s .52s ease both}
+  .stats-row .stat:nth-child(4){animation:riseIn .7s .64s ease both}
   .stat::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent)}
   .stat .num{font-family:var(--font-display);font-weight:700;font-size:2.1rem;
@@ -188,9 +192,18 @@
   .proj .tech span{font-family:var(--font-mono);font-size:.72rem;color:var(--dim)}
   .proj .tech span::after{content:"·";margin-left:8px;color:var(--line-strong)}
   .proj .tech span:last-child::after{content:""}
-  .proj-link{margin-top:18px;font-family:var(--font-mono);font-size:.76rem;color:var(--accent);
-    opacity:.7;transition:opacity .25s,transform .25s}
-  .proj:hover .proj-link{opacity:1;transform:translateX(3px)}
+  .proj-cta{margin-top:22px;align-self:flex-start;display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-body);font-size:.92rem;font-weight:600;letter-spacing:-.01em;
+    padding:12px 22px;border-radius:12px;cursor:pointer;text-decoration:none;
+    background:var(--accent);color:#180703;border:1px solid var(--accent);
+    box-shadow:0 8px 28px -8px rgba(240,81,56,.65);transition:.2s;position:relative;z-index:2}
+  .proj-cta svg{margin-top:-2px}
+  .proj-cta:hover{background:var(--accent-2);border-color:var(--accent-2);transform:translateY(-2px);
+    box-shadow:0 12px 34px -8px rgba(240,81,56,.85)}
+  .proj-cta:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+  .proj{cursor:pointer}
+  .proj:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){.proj-cta:hover{transform:none}}
 
   /* contact */
   .contact{text-align:center;padding:96px 0 60px}
@@ -214,7 +227,7 @@
     .portrait-wrap{order:-1;min-height:0}
     .portrait-wrap img{width:min(72vw,380px)}
     .hero{padding:150px 0 70px}
-    .stats-row{margin-top:48px}
+    .stats-row{margin-top:48px;grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:880px){
     .stats-row{grid-template-columns:1fr;gap:14px}
@@ -266,13 +279,13 @@
           <span class="eyebrow">iOS Developer</span>
           <h1>Khaled Mohammed</h1>
           <div class="accent-bar"></div>
-          <p class="tagline">Taking GCC startups from idea to App Store for 4 years</p>
-          <p class="lead">4+ years turning early ideas into native iOS apps people use every day — architecture, Swift &amp; SwiftUI, backend, payments, and release. From first commit to live on the App Store.</p>
+          <p class="tagline">Turning GCC founders’ ideas into running businesses on the App Store</p>
+          <p class="lead">I help founders decide <em>what</em> to build, not just how — from the first conversation to launch, and then for the years after. Most engagements run one to two years, and several are still running today.</p>
           <div class="hero-cta">
             <a href="#work" class="btn btn-primary">View work</a>
             <a href="#contact" class="btn btn-ghost">Get in touch</a>
           </div>
-          <span class="pill"><span class="live"></span>Open to iOS roles · remote or on-site</span>
+          <span class="pill"><span class="live"></span><b>Available now</b> · open to senior iOS roles, remote or on-site</span>
         </div>
 
         <div class="portrait-wrap">
@@ -284,16 +297,20 @@
       <div class="stats-row">
         <a class="stat glass" href="https://mostaql.com/u/khaled_m2" target="_blank" rel="noopener">
           <span class="num">+26</span>
-          <div class="meta"><div class="t">Projects on Mostaql</div><div class="s">Since Jan 2022</div></div>
+          <div class="meta"><div class="t">Milestones on Mostaql</div><div class="s">Since Jan 2022</div></div>
         </a>
         <a class="stat glass" href="https://www.forlanso.com/en/khaled-mohamed-6" target="_blank" rel="noopener">
           <span class="num">+21</span>
-          <div class="meta"><div class="t">Projects on Forlanso</div><div class="s">Since Jul 2025</div></div>
+          <div class="meta"><div class="t">Milestones on Forlanso</div><div class="s">Since Jul 2025</div></div>
         </a>
         <div class="stat glass">
           <span class="num">+5</span>
           <div class="meta"><div class="t">Apps on the App Store</div><div class="s">Live on iOS</div></div>
         </div>
+        <a class="stat glass" href="https://mostaql.com/u/khaled_m2" target="_blank" rel="noopener">
+          <span class="num">5.0</span>
+          <div class="meta"><div class="t">Client rating &#9733;</div><div class="s">24 verified reviews</div></div>
+        </a>
       </div>
     </div>
   </section>
@@ -304,41 +321,53 @@
       <div class="sec-head reveal">
         <span class="eyebrow">Selected work</span>
         <h2>Products I've shipped</h2>
-        <p>Client platforms and independent apps — all live on the App Store. Client code lives in private repositories; happy to walk through any of it. Tap a card to view it on the App Store.</p>
+        <p>Client platforms and independent apps, all live on the App Store and still shipping. These aren’t one-off builds — most ran for a year or more, and several are still under active development. <strong>Client code stays private under NDA, and it stays that way.</strong> But I’ll walk you through the architecture, the trade-offs, and every decision behind it.</p>
       </div>
       <div class="work-grid">
 
-        <a class="proj glass reveal" href="https://apps.apple.com/eg/app/maghasel-%D9%85%D8%BA%D8%A7%D8%B3%D9%84/id6627333043" target="_blank" rel="noopener">
+        <article class="proj glass reveal" data-href="https://apps.apple.com/app/id6627333043" tabindex="0" role="link">
           <div class="proj-top"><h3>Maghasel</h3><span class="tag">App Store</span></div>
           <div class="region">Kuwait · On-demand</div>
-          <p>An on-demand car-wash and boat-cleaning platform — a suite of native iOS apps on a Firebase backend with Tap Payments, built and shipped end-to-end.</p>
-          <div class="tech"><span>Swift</span><span>Firebase</span><span>Tap Payments</span></div>
-          <span class="proj-link">View on the App Store →</span>
-        </a>
+          <p>A multi-vendor on-demand car-wash and boat-cleaning marketplace. <strong>Two native iOS apps sharing one backend</strong> — a customer app for booking, plus a merchant app where vendors accept and fulfil jobs. Tap Payments, push notifications (FCM), and App Check integrated; built and shipped end to end.</p>
+          <div class="tech"><span>Swift</span><span>Tap Payments</span><span>FCM</span><span>Customer + merchant apps</span></div>
+          <a class="proj-cta" href="https://apps.apple.com/app/id6627333043" target="_blank" rel="noopener" aria-label="View Maghasel on the App Store">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.8 1.1 9 .7 1.1 1.6 2.3 2.8 2.3 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.8zM14.2 6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.6-1.3z"/></svg>
+            View on the App Store
+          </a>
+        </article>
 
-        <a class="proj glass reveal" href="https://apps.apple.com/eg/app/redramp/id6479068212" target="_blank" rel="noopener">
+        <article class="proj glass reveal" data-href="https://apps.apple.com/app/id6479068212" tabindex="0" role="link">
           <div class="proj-top"><h3>RedRamp</h3><span class="tag">App Store</span></div>
           <div class="region">Saudi Arabia · On-demand</div>
-          <p>A subscription car-wash platform, live since 2024 — client and driver apps with package subscriptions, time-slot dispatch, and in-app payments on a Firebase backend.</p>
-          <div class="tech"><span>SwiftUI</span><span>MVVM-C</span><span>Firebase</span><span>Moyasar</span></div>
-          <span class="proj-link">View on the App Store →</span>
-        </a>
+          <p>A subscription car-wash platform, live since 2024 — client and driver apps with package subscriptions, time-slot dispatch, in-app payments, and push notifications (FCM) for live job updates.</p>
+          <div class="tech"><span>SwiftUI</span><span>MVVM-C</span><span>Moyasar</span><span>Apple Pay</span></div>
+          <a class="proj-cta" href="https://apps.apple.com/app/id6479068212" target="_blank" rel="noopener" aria-label="View RedRamp on the App Store">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.8 1.1 9 .7 1.1 1.6 2.3 2.8 2.3 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.8zM14.2 6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.6-1.3z"/></svg>
+            View on the App Store
+          </a>
+        </article>
 
-        <a class="proj glass reveal" href="https://apps.apple.com/eg/app/%D8%AD%D9%82%D9%8A%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%85/id6474667396" target="_blank" rel="noopener">
+        <article class="proj glass reveal" data-href="https://apps.apple.com/app/id6474667396" tabindex="0" role="link">
           <div class="proj-top"><h3>Teacher's Bag</h3><span class="tag">App Store</span></div>
           <div class="region">Arab region · Productivity</div>
           <p>An offline-first lesson and grading app for teachers — Core Data with iCloud (CloudKit) sync across iPhone and iPad, automatic grading, and reminders. Arabic-first.</p>
           <div class="tech"><span>SwiftUI</span><span>Core Data</span><span>CloudKit</span><span>RevenueCat</span></div>
-          <span class="proj-link">View on the App Store →</span>
-        </a>
+          <a class="proj-cta" href="https://apps.apple.com/app/id6474667396" target="_blank" rel="noopener" aria-label="View Teacher's Bag on the App Store">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.8 1.1 9 .7 1.1 1.6 2.3 2.8 2.3 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.8zM14.2 6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.6-1.3z"/></svg>
+            View on the App Store
+          </a>
+        </article>
 
-        <a class="proj glass reveal" href="https://apps.apple.com/eg/app/fintik/id6749169615" target="_blank" rel="noopener">
+        <article class="proj glass reveal" data-href="https://apps.apple.com/app/id6749169615" tabindex="0" role="link">
           <div class="proj-top"><h3>FinTik</h3><span class="tag">App Store</span></div>
           <div class="region">Independent · Finance</div>
           <p>A personal finance app — offline-first with Core Data and CloudKit sync, Sign in with Apple, spending reports, budgets, and subscriptions. Bilingual with full RTL.</p>
           <div class="tech"><span>SwiftUI</span><span>MVVM-C</span><span>StoreKit 2</span><span>RevenueCat</span></div>
-          <span class="proj-link">View on the App Store →</span>
-        </a>
+          <a class="proj-cta" href="https://apps.apple.com/app/id6749169615" target="_blank" rel="noopener" aria-label="View FinTik on the App Store">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.4.8-.7 0-1.8-.8-2.9-.8-1.5 0-2.9.9-3.6 2.2-1.6 2.7-.4 6.8 1.1 9 .7 1.1 1.6 2.3 2.8 2.3 1.1 0 1.5-.7 2.9-.7 1.3 0 1.7.7 2.9.7 1.2 0 2-1.1 2.7-2.2.9-1.2 1.2-2.5 1.2-2.5s-2.4-.9-2.4-3.8zM14.2 6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.6-1.3z"/></svg>
+            View on the App Store
+          </a>
+        </article>
 
       </div>
     </div>
@@ -356,21 +385,64 @@
           <h3><span class="d"></span>iOS</h3>
           <div class="chips">
             <span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">UIKit</span>
-            <span class="chip">Swift Concurrency</span><span class="chip">Combine</span>
+            <span class="chip">Swift Concurrency</span><span class="chip">Structured concurrency</span><span class="chip">Combine</span>
+            <span class="chip">Core Data</span><span class="chip">CloudKit</span><span class="chip">PassKit / Wallet</span>
           </div>
         </div>
         <div class="stack-card glass reveal">
-          <h3><span class="d"></span>Architecture &amp; Testing</h3>
+          <h3><span class="d"></span>Testing</h3>
           <div class="chips">
-            <span class="chip">MVVM</span><span class="chip">Clean Architecture</span>
-            <span class="chip">XCTest</span><span class="chip">TDD</span><span class="chip">Modular design</span>
+            <span class="chip">TDD</span><span class="chip">XCTest</span>
+            <span class="chip">Dependency injection</span><span class="chip">Mocking</span>
+            <span class="chip">Test doubles</span>
+          </div>
+        </div>
+
+        <div class="stack-card glass reveal">
+          <h3><span class="d"></span>Architecture</h3>
+          <div class="chips">
+            <span class="chip">MVVM</span><span class="chip">MVVM-C</span>
+            <span class="chip">Clean Architecture</span><span class="chip">Multi-vendor marketplaces</span>
           </div>
         </div>
         <div class="stack-card glass reveal">
-          <h3><span class="d"></span>Backend &amp; Tools</h3>
+          <h3><span class="d"></span>Growth &amp; Analytics</h3>
           <div class="chips">
-            <span class="chip">Firebase</span><span class="chip">RevenueCat</span>
-            <span class="chip">REST APIs</span><span class="chip">Git</span><span class="chip">Xcode</span>
+            <span class="chip">Firebase Analytics</span><span class="chip">A/B Testing</span>
+            <span class="chip">Remote Config</span><span class="chip">Feature flags</span>
+            <span class="chip">Funnels</span><span class="chip">Staged rollouts</span>
+          </div>
+        </div>
+        <div class="stack-card glass reveal">
+          <h3><span class="d"></span>Payments &amp; Monetization</h3>
+          <div class="chips">
+            <span class="chip">Moyasar</span><span class="chip">Tap Payments</span><span class="chip">Apple Pay</span>
+            <span class="chip">StoreKit 2</span><span class="chip">In-App Purchases</span><span class="chip">RevenueCat</span>
+          </div>
+        </div>
+
+        <div class="stack-card glass reveal">
+          <h3><span class="d"></span>Localization</h3>
+          <div class="chips">
+            <span class="chip">Arabic RTL</span><span class="chip">Multi-language</span>
+            <span class="chip">Locale-aware formatting</span>
+          </div>
+        </div>
+        <div class="stack-card glass reveal">
+          <h3><span class="d"></span>Networking &amp; Integrations</h3>
+          <div class="chips">
+            <span class="chip">REST APIs</span><span class="chip">URLSession</span><span class="chip">async/await</span>
+            <span class="chip">Codable</span><span class="chip">Error handling</span><span class="chip">Firebase</span>
+            <span class="chip">Firebase App Check / App Attest</span><span class="chip">FCM</span>
+          </div>
+        </div>
+
+        <div class="stack-card glass reveal">
+          <h3><span class="d"></span>Performance &amp; Tooling</h3>
+          <div class="chips">
+            <span class="chip">Instruments</span><span class="chip">Time profiler</span>
+            <span class="chip">Memory &amp; leaks</span><span class="chip">Startup-time optimization</span>
+            <span class="chip">Swift Package Manager</span><span class="chip">Xcode</span><span class="chip">Git</span>
           </div>
         </div>
       </div>
@@ -386,8 +458,10 @@
       </div>
       <div class="about-grid">
         <div class="about-body reveal">
-          <p>I'm an iOS developer based in Egypt, working with startups across the region. For the past four years I've owned products the whole way — <strong>architecture, Swift &amp; SwiftUI, backend, payments, and release</strong> — turning early ideas into apps that real users depend on.</p>
-          <p>I care about <strong>clean architecture</strong>, interfaces that feel effortless, and the discipline of actually getting things live. Whether it's a solo indie app or a multi-app client platform, the goal is the same: ship something people trust.</p>
+          <p>I'm an iOS developer based in Egypt, building for startups in Saudi Arabia and Kuwait. For four years I've taken products from a founder's first idea to a running business — scoping the work, shaping the feature set, then owning the build the whole way: <strong>architecture, Swift &amp; SwiftUI, API integration, payments, and release</strong>.</p>
+          <p>The part most people skip: <strong>I stay.</strong> Launch is the start, not the finish. Engagements typically run <strong>one to two years</strong>, several clients are still with me today, and the product keeps shipping on a continuous release cycle long after version 1.0.</p>
+          <p><strong>Weekly reviews with founders and their marketing and operations teams</strong> keep the product tracking the business, not just the backlog. And I instrument what I build — <strong>Firebase Analytics and A/B testing</strong> — so marketing can watch real funnels, test a change against real users, and decide from data instead of opinion.</p>
+          <p>I care about <strong>clean architecture</strong>, interfaces that feel effortless, and the discipline of getting things live. Whether it's a solo indie app or a multi-vendor client marketplace, the goal is the same: ship something people trust.</p>
           <p>Right now I'm open to iOS opportunities — remote or on-site — alongside select client work.</p>
         </div>
         <div class="facts glass reveal">
@@ -395,7 +469,8 @@
           <div class="fact"><span class="k">BASED</span><span class="v">Cairo, Egypt</span></div>
           <div class="fact"><span class="k">EXPERIENCE</span><span class="v">4+ years</span></div>
           <div class="fact"><span class="k">FOCUS</span><span class="v">Swift · SwiftUI</span></div>
-          <div class="fact"><span class="k">ALSO</span><span class="v">Flutter · Firebase</span></div>
+          <div class="fact"><span class="k">ENGAGEMENTS</span><span class="v">1–2 years · 52+ milestones</span></div>
+            <div class="fact"><span class="k">PAYMENTS</span><span class="v">Moyasar · Tap · Apple Pay</span></div>
           <div class="fact"><span class="k">STATUS</span><span class="v">Open to iOS roles</span></div>
         </div>
       </div>
@@ -412,7 +487,8 @@
         <a href="mailto:khaled.m2225@gmail.com" class="btn btn-primary">Email me</a>
         <a href="https://www.linkedin.com/in/khaledm2225/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
         <a href="https://github.com/khaledm2225" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-        <a href="https://www.upwork.com/freelancers/~0136f03ca1ae282bf0" target="_blank" rel="noopener" class="btn btn-ghost">Upwork</a>
+        <a href="https://mostaql.com/u/khaled_m2" target="_blank" rel="noopener" class="btn btn-ghost">Mostaql</a>
+          <a href="https://www.upwork.com/freelancers/~0136f03ca1ae282bf0" target="_blank" rel="noopener" class="btn btn-ghost">Upwork</a>
         <a href="https://www.forlanso.com/en/khaled-mohamed-6" target="_blank" rel="noopener" class="btn btn-ghost">Forlanso</a>
       </div>
     </div>
@@ -453,6 +529,23 @@
     });
   },{rootMargin:'-45% 0px -50% 0px'});
   secs.forEach(s=>spy.observe(s));
+</script>
+
+
+<script>
+  // The CTA button is the visible affordance. Tapping the card still works.
+  document.querySelectorAll('.proj[data-href]').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;                 // let the button do its own thing
+      window.open(card.dataset.href, '_blank', 'noopener');
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.open(card.dataset.href, '_blank', 'noopener');
+      }
+    });
+  });
 </script>
 </body>
 </html>
